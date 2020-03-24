@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Hello Spring Boot</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+
+</head>
+<body>
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Meteriologia</h1>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Cidade</th>
+						<th>Dia da Semana</th>
+						<th>Temperatura máxima(°C)</th>
+						<th>Temperatura minima(°C)</th>
+						<th>umidade(%)</th>
+						<th>descrição</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="meteriologia : ${meteriologia}">
+						<td th:text="${meteriologia.cidade}"></td>
+						<td th:text="${meteriologia.diaSemana}"></td>
+						<td th:text="${meteriologia.tempMax}"></td>
+						<td th:text="${meteriologia.tempMin}"></td>
+						<td th:text="${meteriologia.umidade}"></td>
+						<td th:text="${meteriologia.descricao}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
