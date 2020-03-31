@@ -1,6 +1,8 @@
 package br.usjt.meteriologia.model;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.util.Calendar;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +15,11 @@ public class Meteriologia implements Serializable {
 	@GeneratedValue
 	private long id;
 	private String diaSemana;
+	private Date data;
 	private String cidade;
+	private String longitude;
+	private String latitude;
+	private String horario;
 	private Double tempMax;
 	private Double tempMin;
 	private Double umidade;
@@ -21,6 +27,24 @@ public class Meteriologia implements Serializable {
 	
 	
 	
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
 	public long getId() {
 		return id;
 	}
@@ -62,6 +86,16 @@ public class Meteriologia implements Serializable {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	
+	
+	public String getHorario() {
+		return horario;
+	}
+	
+	
+	public void setHorario(String horario) {
+		this.horario = horario;
 	}
 
 }

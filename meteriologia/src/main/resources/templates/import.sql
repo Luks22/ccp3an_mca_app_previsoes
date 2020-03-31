@@ -1,0 +1,1 @@
+insert into meteriologia(id, dia_semana,data, cidade, longitude, latitude, temp_max, temp_min, umidade, descricao) values (10, 'Domingo', {ts '2012-09-17 18:47:52.69'}, 'São Paulo', 25, 25, 28, 23.9, 60.0, 'brisa moderada, sem chances de chuva');

@@ -1,5 +1,0 @@
-insert into meteriologia(id, dia_semana, cidade, temp_max, temp_min, umidade, descricao) values (1, 'Domingo', 'São Paulo', 28, 23.9, 60.0, 'brisa moderada, sem chances de chuva');
-insert into meteriologia(id, dia_semana, cidade, temp_max, temp_min, umidade, descricao) values (2, 'Segunda', 'São Paulo', 18.6, 19.6, 65, 'brisa suave com algumas nuvens');
-insert into meteriologia(id, dia_semana, cidade, temp_max, temp_min, umidade, descricao) values (3, 'Terça', 'São Paulo', 17.8, 24.7, 75, 'brisa leve, com chances de chuva no final da tarde');
-insert into meteriologia(id, dia_semana, cidade, temp_max, temp_min, umidade, descricao) values (4, 'Quarta', 'São Paulo', 17.5, 24.3, 75, 'brisa leve com céu limpo');
-insert into meteriologia(id, dia_semana, cidade, temp_max, temp_min, umidade, descricao) values (5, 'Quinta', 'São Paulo', 18, 25.8, 75, 'brisa leve com o céu nublado');
