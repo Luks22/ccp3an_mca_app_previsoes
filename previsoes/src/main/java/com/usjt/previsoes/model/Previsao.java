@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -38,6 +39,9 @@ public class Previsao {
 	@OneToOne(optional = false, cascade=CascadeType.ALL)
 	@JoinColumn(name = "id_diaSemana")
 	private DiaDaSemana diaSemana;
+	
+	@ManyToOne
+	private Cidade cidade;
 	
 	public long getId() {
 		return id;
@@ -82,10 +86,17 @@ public class Previsao {
 	public void setDiaSemana(DiaDaSemana diaSemana) {
 		this.diaSemana = diaSemana;
 	}
+	public Cidade getCidade() {
+		return cidade;
+	}
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+	
 	@Override
 	public String toString() {
 		return "Previsao [id=" + id + ", data=" + data + ", tempMax=" + tempMax + ", tempMin=" + tempMin + ", umidade="
-				+ umidade + ", descricao=" + descricao + ", diaSemana=" + diaSemana + "]";
+				+ umidade + ", descricao=" + descricao + ", diaSemana=" + diaSemana + ", cidade=" + cidade + "]";
 	}
 	@Override
 	public int hashCode() {
