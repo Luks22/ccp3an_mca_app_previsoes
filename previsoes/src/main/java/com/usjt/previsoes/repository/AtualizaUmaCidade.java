@@ -13,8 +13,8 @@ public class AtualizaUmaCidade {
 		transaction.begin();
 		Cidade c = manager.find(Cidade.class, 1L);
 		c.setNome("Rio de Janeiro");
-		c.setLatitude(15985234L);
-		c.setLongitude(23647859L);
+		c.setLatitude(15985234D);
+		c.setLongitude(23647859D);
 		transaction.commit();
 		manager.close();
 		JPAUtil.close();

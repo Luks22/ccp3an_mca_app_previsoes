@@ -1,5 +1,6 @@
 package com.usjt.previsoes.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -8,13 +9,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "cidade")
-public class Cidade {
+public class Cidade implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,10 +25,10 @@ public class Cidade {
 	private String nome;
 	
 	@Column(nullable = false)
-	private Long latitude;
+	private Double latitude;
 	
 	@Column(nullable = false)
-	private Long longitude;
+	private Double longitude;
 	
 	@OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL)
 	private List<Previsao> previsao;
@@ -45,16 +46,16 @@ public class Cidade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Long getLatitude() {
+	public Double getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(Long latitude) {
+	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
 	}
-	public Long getLongitude() {
+	public Double getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(Long longitude) {
+	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
 	public List<Previsao> getPrevisao() {

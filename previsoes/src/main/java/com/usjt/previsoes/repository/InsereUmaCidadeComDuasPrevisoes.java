@@ -22,8 +22,8 @@ public class InsereUmaCidadeComDuasPrevisoes {
 		
 		
 		Cidade cidade = new Cidade();
-		cidade.setLatitude(546154646L);
-		cidade.setLongitude(456484545L);
+		cidade.setLatitude(546154646D);
+		cidade.setLongitude(456484545D);
 		cidade.setNome("São Paulo");
 		
 		List<Previsao> previsoes = new ArrayList<>();
