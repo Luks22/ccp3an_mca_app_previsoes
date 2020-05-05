@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "previsao")
 public class Previsao implements Serializable {
@@ -26,10 +28,10 @@ public class Previsao implements Serializable {
 	@Column(nullable = false)
 	private Date data;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "temp_max")
 	private Double tempMax;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "temp_min")
 	private Double tempMin;
 	
 	@Column(nullable = false)
@@ -38,10 +40,12 @@ public class Previsao implements Serializable {
 	@Column(nullable = false, length = 200)
 	private String descricao;
 	
+	@JsonIgnore
 	@OneToOne(optional = false, cascade=CascadeType.ALL)
-	@JoinColumn(name = "id_diaSemana")
+	@JoinColumn(name = "id_dia_semana")
 	private DiaDaSemana diaSemana;
 	
+	@JsonIgnore
 	@ManyToOne
 	private Cidade cidade;
 	

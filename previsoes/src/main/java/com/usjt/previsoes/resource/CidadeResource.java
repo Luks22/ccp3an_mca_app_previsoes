@@ -78,7 +78,7 @@ public class CidadeResource {
 	@GetMapping("/letra={letra}")
 	public List<Cidade> buscarPorLetra(@PathVariable(value = "letra") char letra) {
 		Query query = manager.createQuery("select c from Cidade c where c.nome like :letra");
-		query.setParameter("letra", "%"+letra+"%");
+		query.setParameter("letra", letra+"%");
 		return query.getResultList();
 	}
 	
